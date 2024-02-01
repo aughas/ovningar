@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Array av objekt övningar från; JS objekter og HTML template (T7, ale).pdf -->
+    <h1>band</h1>
+
+    <main></main>
+    <!-- kan kopiera/klona <template> -->
+    <template id="bandTemplate">
+        <article>
+            <h2></h2>
+            <p></p>
+            <img src="" alt="">
+        </article>
+    </template>
+    <script>
+        const yndlingsBand = [
+            {
+                navn: "5 seconds of summer",
+                dannet: "2010",
+                albums: ["Sidste sommer", "Næste jul", 5],
+                medlemmer: ["Peter", "Niles", "August"],
+                bild: "bandbild.jpeg"
+            },
+            {
+                navn: "Sidestep",
+                dannet: "2020",
+                albums: ["Control Society", "Sidestep", "Still Alive"],
+                medlemmer: ["Hugo", "John", "Nils", "Andy", "Joel"],
+                bild: "sidestep.png"
+            },
+            {
+                navn: "Outstand",
+                dannet: "2019",
+                albums: ["Never Lost a Fight", "Worse Than Before", "Demo"],
+                medlemmer: ["Björn", "John", "Nils", "Joel", "Gurra"],
+                bild: "outstand.png"
+            }
+        ]
+
+        const skabelon = document.querySelector("#bandTemplate").content;
+
+        yndlingsBand.forEach(visBands);
+
+        function visBands(yndlingsBand) {
+
+            const klon = skabelon.cloneNode(true);
+            console.log(klon);
+            const p = klon.querySelector("p");
+            const h2 = klon.querySelector("h2");
+            const img = klon.querySelector("img");
+            p.textContent = "grundat : " + yndlingsBand.dannet;
+            h2.textContent += "namn " + yndlingsBand.navn;
+            p.textContent += ". Medlemmer er " + yndlingsBand.medlemmer;
+            p.textContent += ". Forsanger er " + yndlingsBand.medlemmer[0];
+            img.src = yndlingsBand.bild;
+            const beholder = document.querySelector("main");
+            beholder.appendChild(klon);
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
