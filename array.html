@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<!-- array t7 pdf första övning -->
+
+<body>
+    <h1>Playlist</h1>
+    <ul></ul>
+
+    <script>
+        const songs = ["Two of Us", "Dig a Pony", "Across the Universe", "I Me Mine", "Let it Be", "Maggie Mae", "I've Got a Feeling", "One After 900", "The Long and Winding Road", "For You Blue", "Get Back"];
+        const ul = document.querySelector("ul");
+
+        //får tag på ^^^här:
+        songs.forEach(bygListe);
+
+        function bygListe(musik) {
+            console.log(musik)
+            ul.innerHTML += "<li>" + musik + "</li>";
+        }
+    </script>
+</body>
+
+</html>
