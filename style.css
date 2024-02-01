@@ -4,6 +4,10 @@ main {
 }
 
 img {
-  height: 400px;
-  width: auto;
+  height: 200px;
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+img:hover {
 }

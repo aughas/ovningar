@@ -11,11 +11,31 @@
 <body>
     <main>
         <img src="pics1/snaps.png" alt="snaps">
-        <img src="pics1/beer.webp" alt="öl">
+        <img src="pics1/beer.webp" alt="beer">
         <img src="pics1/fanta.png" alt="fanta">
         <img src="pics1/cola.png" alt="cola">
     </main>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        const beer = document.querySelector("img[alt=beer");
+        const snaps = document.querySelector("img[alt=snaps");
+        const cola = document.querySelector("img[alt=cola");
+        const fanta = document.querySelector("img[alt=fanta");
+
+        beer.addEventListener("click", tjek);
+        cola.addEventListener("click", tjek);
+        fanta.addEventListener("click", tjek);
+        snaps.addEventListener("click", tjek);
+
+        function tjek() {
+            console.log(this.alt);
+            if (this.alt == "beer" || this.alt == "snaps") {
+                console.log("innehåller alkohol");
+            } else {
+                console.log("alkoholfri");
+            }
+        }
+    </script>
 </body>
 
 </html>
